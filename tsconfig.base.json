@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@bencehornyak/geolocation-service": [
+        "libs/geolocation-service/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

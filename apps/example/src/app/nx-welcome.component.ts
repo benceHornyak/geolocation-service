@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { GeolocationService } from '@bencehornyak/geolocation-service';
 
 /* eslint-disable */
 
@@ -843,7 +844,12 @@ nx affected:e2e</pre>
   encapsulation: ViewEncapsulation.None,
 })
 export class NxWelcomeComponent implements OnInit {
-  constructor() {}
+  constructor(private geoService$: GeolocationService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.geoService$.subscribe({
+      next: (r) => console.log(r),
+      error: (err) => console.error(err),
+    });
+  }
 }

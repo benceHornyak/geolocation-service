@@ -122,6 +122,48 @@
       },
       "tags": [],
       "implicitDependencies": ["example"]
+    },
+    "geolocation-service": {
+      "projectType": "library",
+      "root": "libs/geolocation-service",
+      "sourceRoot": "libs/geolocation-service/src",
+      "prefix": "bencehornyak",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/geolocation-service"],
+          "options": {
+            "project": "libs/geolocation-service/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/geolocation-service/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/geolocation-service/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/geolocation-service"],
+          "options": {
+            "jestConfig": "libs/geolocation-service/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/geolocation-service/src/**/*.ts",
+              "libs/geolocation-service/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
     }
   }
 }
